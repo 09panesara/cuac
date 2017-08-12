@@ -1,0 +1,26 @@
+{
+  "name": "cuac",
+  "version": "1.0.0",
+  "description": "CUAC website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"hello\""
+  },
+  "keywords": [
+    "cuac",
+    "website"
+  ],
+  "author": "amrita",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-webserver": "^0.9.1"
+  },
+  "dependencies": {
+    "minimatch": "^3.0.4",
+    "vueify": "^9.4.1"
+  }
+}
