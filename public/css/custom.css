@@ -6399,13 +6399,13 @@ th.hide-for-touch {
 
 /*
 font-family: 'Dosis', sans-serif;
-font-family: 'Hind', sans-serif;
+font-family: 'Hind', sans-serif; used
 font-family: 'Josefin Sans', sans-serif;
 font-family: 'Josefin Slab', serif;
 font-family: 'Passion One', cursive;
 font-family: 'Source Sans Pro', sans-serif;
-font-family: 'Ubuntu', sans-serif;
-font-family: 'Merriweather', serif
+font-family: 'Ubuntu', sans-serif; used
+font-family: 'Merriweather', serif used
 ;
 
 */
@@ -6991,6 +6991,9 @@ font-family: 'Merriweather', serif
     text-align: center; }
   .team-card .team-card__img-w {
     height: 15.625rem; }
+    @media only screen and (max-width: 40em) {
+      .team-card .team-card__img-w {
+        height: 10.625rem; } }
   .team-card .team-card__img {
     padding-top: 0.625rem;
     height: 100%;
@@ -7004,15 +7007,23 @@ font-family: 'Merriweather', serif
     font-family: 'Hind', sans-serif;
     text-transform: uppercase;
     font-size: 18px; }
+    @media only screen and (max-width: 40em) {
+      .team-card .team-card__name {
+        font-size: 14px; } }
   .team-card .team-card__role {
     color: #888;
     margin-bottom: 0;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px; }
+    @media only screen and (max-width: 40em) {
+      .team-card .team-card__role {
+        font-size: 12px; } }
+
+.section-full {
+  padding: 4.375rem 6.25rem; }
 
 .section-full, .section-half {
-  text-align: center;
-  padding: 4.375rem 1.25rem; }
+  text-align: center; }
   @media only screen and (max-width: 40em) {
     .section-full, .section-half {
       padding: 6.875rem 1.875rem; } }
@@ -7024,8 +7035,36 @@ font-family: 'Merriweather', serif
   text-transform: uppercase;
   font-family: 'Source Sans Pro', sans-serif; }
 
+.section-full__links > p {
+  padding-right: 0.625rem;
+  font-style: italic;
+  font-family: 'Ubuntu', sans-serif;
+  display: inline;
+  color: #888; }
+  .section-full__links > p:hover {
+    cursor: pointer;
+    opacity: 0.8; }
+
+.section-half-w {
+  max-height: 400px;
+  height: 400px; }
+
+.section-half {
+  width: 50%;
+  padding: 6.25rem 6.25rem;
+  display: inline-block;
+  float: left;
+  height: 100%; }
+
+.bkg-black {
+  background-color: #212121;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: 'Josefin Slab', serif;
+  text-align: justify; }
+
 a {
-  color: #A3C1AD; }
+  color: #888; }
 
 a:hover {
   opacity: 0.8;
@@ -7036,7 +7075,7 @@ a:hover {
   -moz-transition: color .2s ease-in;
   -o-transition: color .2s ease-in;
   -webkit-transition: color .2s ease-in;
-  color: #A3C1AD; }
+  color: #888; }
 
 .hover-cuac {
   color: #FFFFFF; }

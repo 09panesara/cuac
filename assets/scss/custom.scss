@@ -7,13 +7,13 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette|Dosis:800|Hind:700|Josefin+Sans:400i|Josefin+Slab:400i|Merriweather:400i|Passion+One|Source+Sans+Pro:700|Ubuntu');
 /*
 font-family: 'Dosis', sans-serif;
-font-family: 'Hind', sans-serif;
+font-family: 'Hind', sans-serif; used
 font-family: 'Josefin Sans', sans-serif;
 font-family: 'Josefin Slab', serif;
 font-family: 'Passion One', cursive;
 font-family: 'Source Sans Pro', sans-serif;
-font-family: 'Ubuntu', sans-serif;
-font-family: 'Merriweather', serif
+font-family: 'Ubuntu', sans-serif; used
+font-family: 'Merriweather', serif used
 ;
 
 */
@@ -24,9 +24,12 @@ font-family: 'Merriweather', serif
 @import 'components/section/__section.scss';
 
 
-a{
-    color: $color-cuac;
+a {
+    color: $color-grey;
+
 }
+
+
 
 a:hover {
     opacity: 0.8;
@@ -37,7 +40,7 @@ a:hover {
     -moz-transition: color .2s ease-in;
     -o-transition: color .2s ease-in;
     -webkit-transition: color .2s ease-in;
-    color: $color-cuac;
+    color: $color-grey;
 }
 
 .hover-cuac{

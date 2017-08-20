@@ -1,6 +1,8 @@
-﻿.section-full, .section-half{
+﻿.section-full {
+    padding: rem-calc(70 100);
+}
+.section-full, .section-half{
     text-align: center;
-    padding: rem-calc(70 20);
     @media #{$small-only}{
         padding: rem-calc(110 30);
     }
@@ -13,4 +15,37 @@
 .section-full-heading {
     text-transform: uppercase;
     font-family: 'Source Sans Pro', sans-serif;
+}
+
+.section-full__links > p {
+    padding-right: rem-calc(10px);
+    font-style: italic;
+    font-family: 'Ubuntu', sans-serif;
+    display: inline;
+    color: $color-grey;
+    &:hover{
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
+
+.section-half-w{
+    max-height: 400px;
+    height: 400px;
+
+}
+.section-half {
+    width: 50%;
+    padding: rem-calc(100 100);
+    display: inline-block;
+    float: left;
+    height: 100%;
+}
+
+.bkg-black {
+    background-color: $color-black;
+    color: $color-white;
+    font-size: 20px;
+    font-family: 'Josefin Slab', serif;
+    text-align: justify;
 }

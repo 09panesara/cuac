@@ -36,6 +36,10 @@
 
     .team-card__img-w {
         height: rem-calc(250px);
+
+        @media #{$small-only} {
+            height: rem-calc(170px);
+        }
     }
 
     .team-card__img {
@@ -55,6 +59,10 @@
         font-family: 'Hind', sans-serif;
         text-transform: uppercase;
         font-size: 18px;
+
+        @media #{$small-only} {
+            font-size: 14px;
+        }
     }
 
     .team-card__role {
@@ -62,5 +70,9 @@
         margin-bottom: 0;
         font-family: 'Josefin Sans', sans-serif;
         font-size: 16px;
+
+        @media #{$small-only} {
+            font-size: 12px;
+        }
     }
 }

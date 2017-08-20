@@ -5,12 +5,14 @@
     "\\assets\\js",
     "\\assets\\scss",
     "\\assets\\scss\\components",
-    "\\assets\\scss\\components\\header",
+    "\\assets\\scss\\components\\section",
     "\\components",
+    "\\components\\header",
+    "\\components\\section",
     "\\layouts",
-    "\\public",
-    "\\public\\images"
+    "\\layouts\\alumni",
+    "\\layouts\\teams-and-squads"
   ],
-  "SelectedNode": "\\public\\images\\cuac-logo.png",
+  "SelectedNode": "\\assets\\scss\\custom.scss",
   "PreviewInSolutionExplorer": false
 }
