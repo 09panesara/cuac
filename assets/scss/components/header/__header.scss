@@ -1,0 +1,117 @@
+@import '../../_imports.scss';
+
+.header__logo {
+    background-image: url('../images/cuac-logo.png');
+    background-size: cover;
+    position: fixed;
+    top: rem-calc(28px);
+    left: rem-calc(40px);
+    width: rem-calc(70px);
+    height: rem-calc(70px);
+    z-index: 1;
+    &:hover{
+        transform: scale3d(1.2, 1.2, 1.2);
+    }
+}
+
+/* The nav-overlay (background) */
+.nav-overlay {
+    &.expanded {
+        width: 100%;
+        will-change: width;       
+    }
+
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    z-index: 1;
+    right: 0;
+    top: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9); 
+    overflow-x: hidden; 
+    transition: 0.8s;
+}
+
+/* Position the content inside the nav-overlay */
+.nav-overlay__content {
+    position: relative;
+    top: rem-calc(40px); 
+    width: 100%; 
+    text-align: center;
+    margin-top: rem-calc(30px); 
+}
+
+.nav-overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    font-size: 30px;
+    color: $color-white;
+    display: block;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-family: 'Hind', sans-serif;
+}
+
+
+.nav-overlay .close-btn {
+    //position: absolute;
+    //top: 20px;
+    //right: 45px;
+    //font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .nav-overlay a {
+        //font-size: 20px
+    }
+
+    .nav-overlay .close-btn {
+        //font-size: 40px;
+        //top: 15px;
+        //right: 35px;
+
+        &:before {
+            background-color: red;
+        }
+    }
+}
+
+.nav-overlay .close-btn, .menu-btn {
+    top: rem-calc(28px);
+    right: rem-calc(28px);
+    padding: rem-calc(5px 5px);
+    background-color: #1DE9B6;
+    width: rem-calc(40px);
+    height: rem-calc(40px);
+    text-align: center;
+    font-weight: 100;
+    color: #4e4747;
+
+    &:hover {
+        background-color: #00BFA5
+    }
+}
+
+.close-btn {
+    line-height: rem-calc(35px);
+    font-size: rem-calc(33px);
+    position: absolute;
+}
+
+.menu-btn {
+    position: fixed;
+    line-height: rem-calc(30px);
+    font-size: rem-calc(19px);
+    font-weight: 400;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
+.menu-link{
+    display: unset;
+}

@@ -1,0 +1,16 @@
+﻿.section-full, .section-half{
+    text-align: center;
+    padding: rem-calc(70 20);
+    @media #{$small-only}{
+        padding: rem-calc(110 30);
+    }
+}
+
+.section-full p {
+    font-family: 'Dosis', sans-serif;
+}
+
+.section-full-heading {
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+}

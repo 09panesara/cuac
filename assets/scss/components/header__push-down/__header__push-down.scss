@@ -1,0 +1,22 @@
+@import '../../_imports.scss';
+
+.header__push-down{
+	background-color: $color-black;
+	display: inline-block;
+	opacity: 0.98;
+	width: 100%;
+	margin-bottom: rem-calc(50px);
+
+
+}
+
+.header__push-down__title{
+	padding: 0.2rem $uniform-padding+.2rem;
+
+	h2{
+		color: $color-white;
+		font-family: 'Faustina', serif;
+		font-size: 36px;
+
+	}
+}

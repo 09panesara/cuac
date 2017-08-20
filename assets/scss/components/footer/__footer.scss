@@ -1,0 +1,82 @@
+@import '../../_imports.scss';
+
+.footer{
+	background-color: #222;
+    font-family: $font-links;
+    text-align: center;
+    padding: rem-calc(90px 26px);
+    a{
+        color: white;
+    }
+}
+.footer__row{
+	max-width: 84rem;
+}
+
+.footer__links > a {
+    @media #{$small-only} {
+        margin-right: rem-calc(20px);
+    }
+
+    @media #{$medium-up} {
+        margin-right: rem-calc(70px);
+    }
+
+    text-transform: uppercase;
+}
+
+.footer__fact{
+    color: $color-grey;
+    margin-bottom: rem-calc(60px);
+}
+
+.footer__fact__title{
+    font-weight: 800;
+}
+
+.footer__fact__title, .footer__fact__info {
+    display: inline;
+    font-family: 'Courgette', cursive;
+    font-size: rem-calc(20px);
+}
+
+.footer__cuac-info {
+    font-size: rem-calc(17px);
+
+    @media #{($small-only)} {
+        width: 100%;
+    }
+
+    @media #{($large-only, $medium-only)} {
+        display: inline;
+        width: 50%;
+
+        &:first-child {
+            text-align: right;
+        }
+
+        &:last-child {
+            text-align: left;
+        }
+    }
+}
+
+.footer__links, {
+    margin-bottom: rem-calc(10px);
+}
+
+.footer__info, .footer__fact{
+
+}
+
+.footer__social-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    float: left;
+    position: relative;
+    margin: 0 12px;
+}
+

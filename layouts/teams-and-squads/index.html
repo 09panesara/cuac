@@ -1,0 +1,83 @@
+<html>
+<head>
+    @@include('../basic-layout.html')
+
+
+</head>
+<body>
+
+    @@include('../../components/header/_header.html')
+
+    <div class="section-full">
+        <div class="row">
+            <h1 class="section-full-heading">Our team</h1>
+            <p>CUAC is special, and that means our team is special too.<br />Go on and scroll down (or filter) to find out more about them.</br>Disclaimer: they're pretty damn awesome. We hope you think so too.</p>
+        </div>
+    </div>
+    <div class="team-members bkg-off-white">
+        @@include('../../components/team-card/_team-card.html', {
+            "member-img": "../images/lea-holiday.jpg",
+            "member-name": "Daisy Irving-Hyman",
+            "member-role": "President"
+        })    
+        @@include('../../components/team-card/_team-card.html', {
+            "member-img": "../images/lea-holiday.jpg",
+            "member-name": "Amrita Panesar",
+            "member-role": "Honorary Secretary/Sprints Squad leader"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/lea-holiday.jpg",
+        "member-name": "James Coxon",
+        "member-role": "Mens' Captain"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/lea-holiday.jpg",
+        "member-name": "Hephzibah 'Hepsi' Adeosun",
+        "member-role": "Womens' Captain"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/lea-holiday.jpg",
+        "member-name": "Tom Goulding",
+        "member-role": "Alverstones' Captain"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/lea-holiday.jpg",
+        "member-name": "Lea Holville",
+        "member-role": "Alligators' Captain (joint)"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/tiwa-abroad.jpg",
+        "member-name": "Tiwa Adebayo",
+        "member-role": "Alligators' Captain (joint)"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/steph.jpg",
+        "member-name": "Stephanie Sinclair",
+        "member-role": "Alumni & Sponsorship Secretary"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/lea-holiday.jpg",
+        "member-name": "Lawrence Hopkins",
+        "member-role": "Publicity Secretary"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/lea-holiday.jpg",
+        "member-name": "Caroline Johnson",
+        "member-role": "Junior Treasurer"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/lea-holiday.jpg",
+        "member-name": "Emmaline Okafor",
+        "member-role": "Kit Secretary"
+        })
+        @@include('../../components/team-card/_team-card.html', {
+        "member-img": "../images/lea-holiday.jpg",
+        "member-name": "Ellie Lane",
+        "member-role": "Officials' Secretary"
+        })
+    </div>
+
+    @@include('../../components/footer/_footer.html', {"footer-fact": "cuac is the oldest athletics club in the world"})
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\assets",
+    "\\assets\\js",
+    "\\assets\\scss",
+    "\\assets\\scss\\components",
+    "\\assets\\scss\\components\\header",
+    "\\components",
+    "\\layouts",
+    "\\public",
+    "\\public\\images"
+  ],
+  "SelectedNode": "\\public\\images\\cuac-logo.png",
+  "PreviewInSolutionExplorer": false
+}

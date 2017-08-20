@@ -1,0 +1,66 @@
+@import '../../_imports.scss';
+
+.team-members {
+    background-color: $color-grey-white;
+    padding: rem-calc(40 40);
+    display: inline-block;
+    width: 100%;
+}
+
+.team-card {
+    display: block;
+    float: left;
+
+    &:hover {
+        .team-card__role, .team-card__name {
+            color: white;
+        }
+
+        cursor: pointer;
+    }
+
+
+    @media #{$medium-down} {
+        width: 50%;
+        padding: rem-calc(10px 10px);
+    }
+
+    @media #{$large-up} {
+        width: 33.33%;
+        padding: rem-calc(20px 20px);
+    }
+
+    .team-card__img-w, .team-card__name, .team-card__role {
+        text-align: center;
+    }
+
+    .team-card__img-w {
+        height: rem-calc(250px);
+    }
+
+    .team-card__img {
+        padding-top: rem-calc(10);
+        height: 100%;
+        width: 100%;
+    }
+
+    .team-card__intro {
+        text-align: center;
+        padding: rem-calc(30 0);
+        background-color: $color-white;
+    }
+
+    .team-card__name {
+        margin-bottom: 0px;
+        font-family: 'Hind', sans-serif;
+        text-transform: uppercase;
+        font-size: 18px;
+    }
+
+    .team-card__role {
+        color: $color-grey;
+        margin-bottom: 0;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 16px;
+    }
+}
