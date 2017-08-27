@@ -1,51 +1,149 @@
 ﻿.section-full {
-    padding: rem-calc(70 100);
+    padding: rem-calc(70 120);
 }
-.section-full, .section-half{
+.section-full, .section-half {
     text-align: center;
-    @media #{$small-only}{
+
+    @media #{$small-only} {
         padding: rem-calc(110 30);
+    }
+
+    .font-dosis-heavy {
+        font-weight: 800;
+        font-family: 'Dosis', sans-serif;
+    }
+
+    .font-slanted {
+        font-family: 'Josefin Sans', sans-serif;
+        text-align: center;
+    }
+
+    p {
+        //font-family: 'Mukta Mahee', sans-serif;
+        @media #{$small-only} {
+            font-size: rem-calc(12px);
+        }
+
+        @media #{$medium-up} {
+            font-size: rem-calc(16px);
+        }
+
+        &.-last-line {
+            margin-bottom: rem-calc(10px);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        &.-remove-margin-bottom{
+            margin-bottom: 0;
+        }
     }
 }
 
+.bkg-black {
+    background-color: $color-black;
+    color: $color-white;
+    font-size: rem-calc(20px);
+    font-family: 'Mukta Mahee', sans-serif;
+
+    h1, h2, h3, h4, h5 {
+        color: $color-white;
+    }
+}
+
+.bkg-off-white {
+    background-color: #f9f9f9;
+    font-family: 'Mukta Mahee', sans-serif;
+    font-size: rem-calc(20px);
+}
+
+.bkg-grey {
+    background-color: $color-dark-grey;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: $color-white;
+    word-spacing: rem-calc(2px);
+    h1, h2, h3, h4, h5{
+        color: $color-white;
+    }
+}
+
+.bkg-white {
+    background-color: $color-white;
+    font-family: 'Mukta Mahee', sans-serif;
+    font-size: rem-calc(20px);
+}
+
+.bkg-light-teal {
+    background-color: #a2e8dd;
+    font-family: 'Mukta Mahee', sans-serif;
+    font-size: rem-calc(20px);
+
+}
+
 .section-full p {
-    font-family: 'Dosis', sans-serif;
+    //font-family: 'Mukta Mahee', sans-serif;
+    font-size: rem-calc(16px);
 }
 
 .section-full-heading {
     text-transform: uppercase;
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
 }
 
-.section-full__links > p {
+.section-full__links > p, .section-full__links > a {
     padding-right: rem-calc(10px);
     font-style: italic;
     font-family: 'Ubuntu', sans-serif;
     display: inline;
     color: $color-grey;
+    font-size: rem-calc(18px);
     &:hover{
         cursor: pointer;
         opacity: 0.8;
     }
 }
 
-.section-half-w{
-    max-height: 400px;
-    height: 400px;
+.section-half-w {
 
+    display: block;
+    overflow: auto;
 }
+
 .section-half {
     width: 50%;
     padding: rem-calc(100 100);
     display: inline-block;
     float: left;
     height: 100%;
+
+    @media #{$small-only} {
+        width: 100%;
+        display: block;
+    }
+    a{
+        margin-bottom: rem-calc(40px);
+        margin-top: rem-calc(10px);
+    }
 }
 
-.bkg-black {
-    background-color: $color-black;
-    color: $color-white;
-    font-size: 20px;
-    font-family: 'Josefin Slab', serif;
-    text-align: justify;
+
+
+.section-img{
+    //min-height: rem-calc(600px);
+    //height: rem-calc(600px);
+    padding: 0 0;
+
+    img{
+        width: 100%;
+        height: 100%;
+        will-change: opacity;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
 }
+

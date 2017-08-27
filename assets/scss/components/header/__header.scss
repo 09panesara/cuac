@@ -55,29 +55,6 @@
 }
 
 
-.nav-overlay .close-btn {
-    //position: absolute;
-    //top: 20px;
-    //right: 45px;
-    //font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-    .nav-overlay a {
-        //font-size: 20px
-    }
-
-    .nav-overlay .close-btn {
-        //font-size: 40px;
-        //top: 15px;
-        //right: 35px;
-
-        &:before {
-            background-color: red;
-        }
-    }
-}
-
 .nav-overlay .close-btn, .menu-btn {
     top: rem-calc(28px);
     right: rem-calc(28px);
@@ -88,11 +65,12 @@
     text-align: center;
     font-weight: 100;
     color: #4e4747;
-
     &:hover {
         background-color: #00BFA5
     }
 }
+
+
 
 .close-btn {
     line-height: rem-calc(35px);
@@ -105,7 +83,7 @@
     line-height: rem-calc(30px);
     font-size: rem-calc(19px);
     font-weight: 400;
-
+    z-index: 1;
     &:hover {
         cursor: pointer;
     }

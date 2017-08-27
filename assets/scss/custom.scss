@@ -4,17 +4,20 @@
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-@import url('https://fonts.googleapis.com/css?family=Courgette|Dosis:800|Hind:700|Josefin+Sans:400i|Josefin+Slab:400i|Merriweather:400i|Passion+One|Source+Sans+Pro:700|Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Courgette|=Mukta+Mahee|Dosis:400,800|Hind:700|Josefin+Sans:400i|Josefin+Slab:400i|Merriweather:400i|Passion+One|Source+Sans+Pro:400,700|Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Mukta+Mahee|Roboto');
 /*
 font-family: 'Dosis', sans-serif;
 font-family: 'Hind', sans-serif; used
 font-family: 'Josefin Sans', sans-serif;
 font-family: 'Josefin Slab', serif;
 font-family: 'Passion One', cursive;
-font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; - used for dark-grey sections
 font-family: 'Ubuntu', sans-serif; used
 font-family: 'Merriweather', serif used
 ;
+    font-family: 'Mukta Mahee', sans-serif; - used for main text on home page
+
 
 */
 @import 'components/header/__header.scss';
@@ -22,11 +25,20 @@ font-family: 'Merriweather', serif used
 @import 'components/footer/__footer.scss';
 @import 'components/team-card/__team-card.scss';
 @import 'components/section/__section.scss';
+@import '_join.scss';
 
+
+.color-hover{
+    cursor: pointer;
+}
 
 a {
     color: $color-grey;
 
+}
+
+.a-cuac{
+    color: $color-cuac;
 }
 
 
@@ -51,9 +63,7 @@ a:hover {
     }
 }
 
-.bkg-off-white{
-    background-color: $color-off-white;
-}
+
 
 .color-bkg-hover:hover {
     color: white;
@@ -70,6 +80,19 @@ a:hover {
     -webkit-transition: color .6s ease-out;
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: 'Hind', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: rem-calc(30px);
+    text-align: center;
+}
 
+.-justify {
+    text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
+}
 
-
+.-block {
+    display: block;
+}

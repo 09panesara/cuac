@@ -1,6 +1,7 @@
 @import url(../foundation-icons/foundation-icons.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
-@import url("https://fonts.googleapis.com/css?family=Courgette|Dosis:800|Hind:700|Josefin+Sans:400i|Josefin+Slab:400i|Merriweather:400i|Passion+One|Source+Sans+Pro:700|Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Courgette|=Mukta+Mahee|Dosis:400,800|Hind:700|Josefin+Sans:400i|Josefin+Slab:400i|Merriweather:400i|Passion+One|Source+Sans+Pro:400,700|Ubuntu");
+@import url("https://fonts.googleapis.com/css?family=Mukta+Mahee|Roboto");
 @import url(../foundation-icons/foundation-icons.css);
 @import url(../foundation-icons/foundation-icons.css);
 @import url(../foundation-icons/foundation-icons.css);
@@ -6403,10 +6404,12 @@ font-family: 'Hind', sans-serif; used
 font-family: 'Josefin Sans', sans-serif;
 font-family: 'Josefin Slab', serif;
 font-family: 'Passion One', cursive;
-font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Source Sans Pro', sans-serif; - used for dark-grey sections
 font-family: 'Ubuntu', sans-serif; used
 font-family: 'Merriweather', serif used
 ;
+    font-family: 'Mukta Mahee', sans-serif; - used for main text on home page
+
 
 */
 .hide-for-small {
@@ -6557,10 +6560,6 @@ font-family: 'Merriweather', serif used
   text-transform: uppercase;
   font-family: 'Hind', sans-serif; }
 
-@media screen and (max-height: 450px) {
-  .nav-overlay .close-btn:before {
-    background-color: red; } }
-
 .nav-overlay .close-btn, .menu-btn {
   top: 1.75rem;
   right: 1.75rem;
@@ -6583,7 +6582,8 @@ font-family: 'Merriweather', serif used
   position: fixed;
   line-height: 1.875rem;
   font-size: 1.1875rem;
-  font-weight: 400; }
+  font-weight: 400;
+  z-index: 1; }
   .menu-btn:hover {
     cursor: pointer; }
 
@@ -6974,11 +6974,17 @@ font-family: 'Merriweather', serif used
 
 .team-card {
   display: block;
-  float: left; }
+  float: left;
+  /* The nav-overlay (background) */
+  /* Position the content inside the nav-overlay */ }
+  .team-card .team-card__content {
+    position: relative; }
   .team-card:hover {
     cursor: pointer; }
     .team-card:hover .team-card__role, .team-card:hover .team-card__name {
       color: white; }
+  .team-card .team-card__overlay {
+    color: white; }
   @media only screen and (max-width: 64em) {
     .team-card {
       width: 50%;
@@ -6995,7 +7001,6 @@ font-family: 'Merriweather', serif used
       .team-card .team-card__img-w {
         height: 10.625rem; } }
   .team-card .team-card__img {
-    padding-top: 0.625rem;
     height: 100%;
     width: 100%; }
   .team-card .team-card__intro {
@@ -7004,12 +7009,13 @@ font-family: 'Merriweather', serif used
     background-color: #FFFFFF; }
   .team-card .team-card__name {
     margin-bottom: 0px;
-    font-family: 'Hind', sans-serif;
-    text-transform: uppercase;
     font-size: 18px; }
     @media only screen and (max-width: 40em) {
       .team-card .team-card__name {
         font-size: 14px; } }
+  .team-card .team-card__name, .team-card .team-card__overlay__title {
+    font-family: 'Hind', sans-serif;
+    text-transform: uppercase; }
   .team-card .team-card__role {
     color: #888;
     margin-bottom: 0;
@@ -7018,36 +7024,115 @@ font-family: 'Merriweather', serif used
     @media only screen and (max-width: 40em) {
       .team-card .team-card__role {
         font-size: 12px; } }
+  .team-card .team-card__overlay {
+    position: absolute;
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: hidden;
+    transition: 0.4s; }
+    .team-card .team-card__overlay.expanded {
+      will-change: width;
+      position: absolute;
+      height: 100%; }
+    @media only screen and (max-width: 40em) {
+      .team-card .team-card__overlay {
+        position: fixed; } }
+    .team-card .team-card__overlay .team-card__overlay__title {
+      margin-bottom: 0;
+      padding-top: 0.9375rem; }
+    .team-card .team-card__overlay .team-card__overlay__fact {
+      font-family: 'Josefin Sans', sans-serif; }
+  .team-card .team-card__overlay__content {
+    position: relative;
+    top: 2.5rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.875rem; }
 
 .section-full {
-  padding: 4.375rem 6.25rem; }
+  padding: 4.375rem 7.5rem; }
 
 .section-full, .section-half {
   text-align: center; }
   @media only screen and (max-width: 40em) {
     .section-full, .section-half {
       padding: 6.875rem 1.875rem; } }
+  .section-full .font-dosis-heavy, .section-half .font-dosis-heavy {
+    font-weight: 800;
+    font-family: 'Dosis', sans-serif; }
+  .section-full .font-slanted, .section-half .font-slanted {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center; }
+  @media only screen and (max-width: 40em) {
+    .section-full p, .section-half p {
+      font-size: 0.75rem; } }
+  @media only screen and (min-width: 40.0625em) {
+    .section-full p, .section-half p {
+      font-size: 1rem; } }
+  .section-full p.-last-line, .section-half p.-last-line {
+    margin-bottom: 0.625rem; }
+  .section-full p:last-child, .section-half p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0; }
+  .section-full p.-remove-margin-bottom, .section-half p.-remove-margin-bottom {
+    margin-bottom: 0; }
+
+.bkg-black {
+  background-color: #212121;
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-family: 'Mukta Mahee', sans-serif; }
+  .bkg-black h1, .bkg-black h2, .bkg-black h3, .bkg-black h4, .bkg-black h5 {
+    color: #FFFFFF; }
+
+.bkg-off-white {
+  background-color: #f9f9f9;
+  font-family: 'Mukta Mahee', sans-serif;
+  font-size: 1.25rem; }
+
+.bkg-grey {
+  background-color: #37474F;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #FFFFFF;
+  word-spacing: 0.125rem; }
+  .bkg-grey h1, .bkg-grey h2, .bkg-grey h3, .bkg-grey h4, .bkg-grey h5 {
+    color: #FFFFFF; }
+
+.bkg-white {
+  background-color: #FFFFFF;
+  font-family: 'Mukta Mahee', sans-serif;
+  font-size: 1.25rem; }
+
+.bkg-light-teal {
+  background-color: #a2e8dd;
+  font-family: 'Mukta Mahee', sans-serif;
+  font-size: 1.25rem; }
 
 .section-full p {
-  font-family: 'Dosis', sans-serif; }
+  font-size: 1rem; }
 
 .section-full-heading {
   text-transform: uppercase;
-  font-family: 'Source Sans Pro', sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700; }
 
-.section-full__links > p {
+.section-full__links > p, .section-full__links > a {
   padding-right: 0.625rem;
   font-style: italic;
   font-family: 'Ubuntu', sans-serif;
   display: inline;
-  color: #888; }
-  .section-full__links > p:hover {
+  color: #888;
+  font-size: 1.125rem; }
+  .section-full__links > p:hover, .section-full__links > a:hover {
     cursor: pointer;
     opacity: 0.8; }
 
 .section-half-w {
-  max-height: 400px;
-  height: 400px; }
+  display: block;
+  overflow: auto; }
 
 .section-half {
   width: 50%;
@@ -7055,16 +7140,39 @@ font-family: 'Merriweather', serif used
   display: inline-block;
   float: left;
   height: 100%; }
+  @media only screen and (max-width: 40em) {
+    .section-half {
+      width: 100%;
+      display: block; } }
+  .section-half a {
+    margin-bottom: 2.5rem;
+    margin-top: 0.625rem; }
 
-.bkg-black {
-  background-color: #212121;
-  color: #FFFFFF;
-  font-size: 20px;
-  font-family: 'Josefin Slab', serif;
-  text-align: justify; }
+.section-img {
+  padding: 0 0; }
+  .section-img img {
+    width: 100%;
+    height: 100%;
+    will-change: opacity; }
+    .section-img img:hover {
+      opacity: 0.5; }
+
+.prospective-s__qn {
+  margin-top: 3.75rem; }
+
+p.prospective-s__qn__title {
+  font-size: 1.375rem;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #A7FFEB; }
+
+.color-hover {
+  cursor: pointer; }
 
 a {
   color: #888; }
+
+.a-cuac {
+  color: #A3C1AD; }
 
 a:hover {
   opacity: 0.8;
@@ -7083,9 +7191,6 @@ a:hover {
     color: #A3C1AD;
     cursor: pointer; }
 
-.bkg-off-white {
-  background-color: #FAFAFA; }
-
 .color-bkg-hover:hover {
   color: white;
   -moz-transition: color .1s ease-in;
@@ -7097,3 +7202,17 @@ a:hover {
   -moz-transition: color .6s ease-out;
   -o-transition: color .6s ease-out;
   -webkit-transition: color .6s ease-out; }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Hind', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 1.875rem;
+  text-align: center; }
+
+.-justify {
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center; }
+
+.-block {
+  display: block; }

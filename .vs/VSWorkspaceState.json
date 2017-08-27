@@ -2,17 +2,18 @@
   "ExpandedNodes": [
     "",
     "\\assets",
-    "\\assets\\js",
     "\\assets\\scss",
     "\\assets\\scss\\components",
+    "\\assets\\scss\\components\\header",
     "\\assets\\scss\\components\\section",
+    "\\assets\\scss\\components\\team-card",
     "\\components",
-    "\\components\\header",
-    "\\components\\section",
+    "\\components\\team-card",
     "\\layouts",
-    "\\layouts\\alumni",
-    "\\layouts\\teams-and-squads"
+    "\\layouts\\teams-and-squads",
+    "\\public",
+    "\\public\\css"
   ],
-  "SelectedNode": "\\assets\\scss\\custom.scss",
+  "SelectedNode": "\\layouts\\teams-and-squads\\index.html",
   "PreviewInSolutionExplorer": false
 }

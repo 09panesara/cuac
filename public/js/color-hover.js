@@ -7,15 +7,20 @@ $(document).ready(function () {
         $(this).css({
             //'transition': '.15s all 0s ease-in-',
             //'-webkit - transition': '.15s all 0s ease-in-out',
-            '-moz-transition': 'color .3s ease-in',
-            '-o-transition': 'color .3s ease-in',
-            '-webkit-transition': 'color .3s ease-in',
+            '-moz-transition': 'color .2s ease-in',
+            '-o-transition': 'color .2s ease-in',
+            '-webkit-transition': 'color .2s ease-in',
             'color': color
         });
     });
     $(".color-hover").mouseleave(function () {
+        if ($(this).hasClass('reset-black')) {
+            var newColor = "black";
+        } else {
+            var newColor = "white";
+        }
         $(this).css({
-            "color": "white",
+            "color": newColor,
             
         });
     });

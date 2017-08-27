@@ -1,9 +1,20 @@
-<div class="team-card @@category" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer>
-    <div class="team-card__img-w" >
-        <img class="team-card__img" src=@@member-img></>
-    </div>
-    <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
-        <p class="team-card__name">@@member-name</p>
-        <p class="team-card__role">@@member-role</p>
+<div class="team-card @@category" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=@@member-img></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">@@member-name</p>
+            <p class="team-card__role">@@member-role</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
     </div>
 </div>
