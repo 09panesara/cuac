@@ -2,18 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\assets",
-    "\\assets\\scss",
-    "\\assets\\scss\\components",
-    "\\assets\\scss\\components\\header",
+    "\\assets\\fonts",
+    "\\assets\\js",
+    "\\assets\\scss\\components\\footer",
+    "\\assets\\scss\\components\\header__push-down",
     "\\assets\\scss\\components\\section",
-    "\\assets\\scss\\components\\team-card",
-    "\\components",
-    "\\components\\team-card",
+    "\\assets\\scss\\components\\social-media-bar",
+    "\\bower_components\\foundation\\css",
     "\\layouts",
-    "\\layouts\\teams-and-squads",
-    "\\public",
-    "\\public\\css"
+    "\\layouts\\info-for-members"
   ],
-  "SelectedNode": "\\layouts\\teams-and-squads\\index.html",
+  "SelectedNode": "\\layouts\\info-for-members\\index.html",
   "PreviewInSolutionExplorer": false
 }

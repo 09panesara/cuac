@@ -1,0 +1,76 @@
+@import '../../_imports.scss';
+
+.bar__expand{
+    background-color: $color-cuac;
+    font-weight: 800;
+    margin: auto auto;
+    p{
+        padding-top: 10px;
+    }
+    cursor: pointer;
+}
+
+.bar__social {
+    background-color: $color-grey;
+    will-change: transition;
+    transform: translate3d(-5000px, 0 , 0);
+    &.expand{
+        transform: translate3d(0px, 0, 0);
+    }
+
+}
+
+.bar__social, .bar__expand{
+    &.columns:last-child {
+        float: left;
+    }
+
+    text-align: center;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 0 0;
+    padding: 0 0;
+
+    @media #{$medium-only} {
+       // width: 40px;
+        //height: 40px;
+    }
+
+    @media #{$small-only} {
+        width: 40px;
+        height: 40px;
+    }
+}
+.bar {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    opacity: 0;
+    will-change: opacity;
+    @media #{$large-up} {
+        bottom: rem-calc(50px);
+    }
+
+    @media #{$medium-only} {
+       // bottom: rem-calc(40px);
+    }
+
+    @media #{$small-only} {
+        bottom: rem-calc(30px);
+    }
+
+    i {
+        @media #{$large-only} {
+            font-size: 48px;
+        }
+
+        @media #{$medium-only} {
+           // font-size: 38px;
+        }
+
+        @media #{$small-only} {
+            font-size: 38px;
+        }
+    }
+}

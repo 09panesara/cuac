@@ -5,8 +5,6 @@ $(document).ready(function () {
     $(".color-hover").mouseenter(function(){
         color = colors[Math.floor(Math.random() * (colors.length - 1))];
         $(this).css({
-            //'transition': '.15s all 0s ease-in-',
-            //'-webkit - transition': '.15s all 0s ease-in-out',
             '-moz-transition': 'color .2s ease-in',
             '-o-transition': 'color .2s ease-in',
             '-webkit-transition': 'color .2s ease-in',
@@ -16,7 +14,9 @@ $(document).ready(function () {
     $(".color-hover").mouseleave(function () {
         if ($(this).hasClass('reset-black')) {
             var newColor = "black";
-        } else {
+        } else if ($(this).hasClass('reset-teal')) {
+            var newColor = "#A3C1AD";
+        } else{
             var newColor = "white";
         }
         $(this).css({
@@ -24,7 +24,32 @@ $(document).ready(function () {
             
         });
     });
+    $(".bkg-color-hover").mouseenter(function () {
+        color = colors[Math.floor(Math.random() * (colors.length - 1))];
+        $(this).css({
+            '-moz-transition': 'background-color .2s ease-in',
+            '-o-transition': 'background-color .2s ease-in',
+            '-webkit-transition': 'background-color .2s ease-in',
+            'background-color': color
+        });
+    });
+    $(".bkg-color-click").click(function () {
+        color = colors[Math.floor(Math.random() * (colors.length - 1))];
+        $(this).css({
+            'background-color': color
+        });
+    });
+    $(".bkg-color-hover").mouseleave(function () {
+        if ($(this).hasClass('reset-cuac')) {
+            var newColor = "#A3C1AD";
+        } else {
+            var newColor = "white";
+        }
+        $(this).css({
+            "background-color": newColor,
 
+        });
+    });
 
 });
 

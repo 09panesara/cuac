@@ -1,0 +1,29 @@
+<html>
+<head>
+    @@include('basic-layout.html')
+
+
+</head>
+<body>
+
+    <div class="wrap" data-equalizer="hello">
+        <div class="test" data-equalizer-watch="hello">
+            <p>Hello</p>
+        </div>
+        <div class="test2" data-equalizer-watch="hello">
+            <p>Hello 2</p>
+            <p>Hello 2</p>
+        </div>
+    </div>
+    <script src="../js/foundation.js"></script> <!-- change to individual later -->
+
+    <script src="../js/foundation/foundation.equalizer.js"></script> <!-- change to individual later -->
+
+    <script>
+        $(document).foundation();
+    </script>
+    <script src="/js/vendor/fastclick.js"></script>
+
+</body>
+
+</html>

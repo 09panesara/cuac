@@ -1,4 +1,4 @@
-;(function ($, window, document, undefined) {
+(function ($, window, document, undefined) {
   'use strict';
 
   Foundation.libs.equalizer = {
@@ -39,7 +39,7 @@
       else {
         vals = group ? equalizer.find('['+this.attr_name()+'-watch="'+group+'"]:visible') : equalizer.find('['+this.attr_name()+'-watch]:visible');
       }
-      
+
       if (vals.length === 0) {
         return;
       }

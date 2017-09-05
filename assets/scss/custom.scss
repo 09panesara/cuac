@@ -24,8 +24,11 @@ font-family: 'Merriweather', serif used
 @import 'components/header__push-down/__header__push-down.scss';
 @import 'components/footer/__footer.scss';
 @import 'components/team-card/__team-card.scss';
+@import 'components/social-media-bar/__social-media-bar.scss';
 @import 'components/section/__section.scss';
+@import 'components/card/__card.scss';
 @import '_join.scss';
+
 
 
 .color-hover{
@@ -95,4 +98,30 @@ h1, h2, h3, h4, h5 {
 
 .-block {
     display: block;
+}
+
+:before, :after{
+    box-sizing: border-box;
+    outline: 0;
+}
+
+// need to move into info-for-members/side-nav
+.side-nav {
+    text-align: right;
+    background-color: #A3C1AD;
+    width: 30%;
+    float: right;
+    margin-left: 70%;
+    margin-bottom: 100%;
+}
+.side-nav li a{
+    color: $color-cuac;
+}
+.side-nav a:hover{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.side-nav__a{
+    color: $color-white;
 }

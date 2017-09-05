@@ -4,7 +4,7 @@
 	   
     
   </head>
-  <body>
+  <body data-equalizer="foo">
   
     @@include('../components/header/_header.html')
     
@@ -19,11 +19,11 @@
         <p class="font-slanted" >Daisy Irving-Hyman<br />St John's College, University of Cambridge<br />President, Cambridge University Athletics Club 2017-2018</p>
     </div>
 
-    <div class="section-half-w section-img-w bkg-black" style="height: 510px; max-height: 510px;">
-        <div class="section-half section-img" >
-            <img src="images/jumpers.jpg" class=""/>
+    <div class="section-half-w  bkg-black" data-equalizer-watch="foo">
+        <div class="section-half section-img" data-equalizer-watch="foo">
+            <img src="images/jumpers.jpg" class="" data-equalizer-watch="foo"/>
         </div>
-        <div class="section-half">
+        <div class="section-half" data-equalizer-watch="foo">
             <h3>How do we train?</h3>
             <p>At CUAC, all of our athletes train in what we call 'squads' - individual groups that are specific to the various disciplines within athletics. On your left you'll find the jumps squad for example, the training group for long and triple jump, led by their coach Ben Davies.</p>
             <p>Each squad has its own squad leader and training regime, tailored to the needs of its athletes by a coach who is an expert in that discipline.</p>
@@ -45,9 +45,17 @@
 
           </div>
     </div>
- 
+      <div data-equalizer="hello">
+        <div class="test" data-equalizer-watch="hello">
+            <p>Hello</p>
+        </div>
+      <div class="test2" data-equalizer-watch="hello">
+          <p>Hello</p>
+          <p>Hello</p>
+      </div>
+    </div>
     @@include('../components/footer/_footer.html', {"footer-fact": "cuac is the oldest athletics club in the world"})
-
+    @@include('../components/social-media-bar/_social-media-bar.html')
   </body>
   <script>
 

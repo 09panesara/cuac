@@ -25,9 +25,10 @@
     text-transform: uppercase;
 }
 
-.footer__fact{
+.footer__fact {
     color: $color-grey;
     margin-bottom: rem-calc(60px);
+    padding: 0 30px;
 }
 
 .footer__fact__title{
