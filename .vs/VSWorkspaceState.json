@@ -4,14 +4,12 @@
     "\\assets",
     "\\assets\\fonts",
     "\\assets\\js",
+    "\\assets\\scss",
+    "\\assets\\scss\\components",
     "\\assets\\scss\\components\\footer",
-    "\\assets\\scss\\components\\header__push-down",
-    "\\assets\\scss\\components\\section",
-    "\\assets\\scss\\components\\social-media-bar",
-    "\\bower_components\\foundation\\css",
+    "\\assets\\scss\\components\\info-for-members",
     "\\layouts",
     "\\layouts\\info-for-members"
   ],
-  "SelectedNode": "\\layouts\\info-for-members\\index.html",
   "PreviewInSolutionExplorer": false
 }

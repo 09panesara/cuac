@@ -125,3 +125,9 @@ h1, h2, h3, h4, h5 {
 .side-nav__a{
     color: $color-white;
 }
+
+.hide-for-small-only{
+    @media #{$small-only}{
+        display: none;
+    }
+}

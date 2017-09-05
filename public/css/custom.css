@@ -7434,3 +7434,7 @@ h1, h2, h3, h4, h5 {
 
 .side-nav__a {
   color: #FFFFFF; }
+
+@media only screen and (max-width: 40em) {
+  .hide-for-small-only {
+    display: none; } }
