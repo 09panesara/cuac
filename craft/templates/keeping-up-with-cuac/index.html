@@ -1,0 +1,47 @@
+	{#
+ # News index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/news is
+ # requested, because it is located at news/index.html in your
+ # craft/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout.html" %}
+{% if entry is not defined %}
+    {% set entry = craft.entries.section('keepingUpWithCuac').first() %}
+{% endif %}
+
+
+{# inspiration: https://www.hellozurich.ch/en #}
+
+{% block content %}
+	<div class="section-full bkg-white" style="padding: 45px 0px;">
+	    <div class="row">
+	        <h1 class="section-full-heading">Keeping up with CUAC</h1>
+	        <p class="font-dosis-heavy">All the latest news and adventures here at Cambridge University Athletics Club.</p>
+	    </div>
+	</div>
+	<div class="image-full-wrap">
+		<img class="image-full" src="{{ entry.image.first().url }}">
+	</div>
+
+	<div class="news__overlay bkg-white">
+		<p>Discover unique places and locals’ favourite spots. We bring you the stories behind the sights. This is no ordinary city guide.</p>
+		<p>This is a test version with just a few posts.</p>
+	</div>
+
+	<div class="section-full bkg-off-white">
+		{% for entry in craft.entries.section('blog').find() %}
+			<article>
+				<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+				<p>Posted on {{ entry.postDate.format('F d, Y') }}</p>
+				{{ entry.body.getPage(1) }}
+				<p><a href="{{ entry.url }}">Continue reading</a></p>
+			</article>
+		{% endfor %}
+	</div>
+{% endblock %}

@@ -1,18 +1,30 @@
+{% if entry is not defined %}
+    {% set entry = craft.entries.section('calendar').first() %}
+{% endif %}
 {% extends "_layout.html" %}
 
 {% block content %}
 <div class="section-full">
     <h2>Training Calendar</h2>
-    <iframe src="https://calendar.google.com/calendar/embed?src=cuac.athletics%40gmail.com&ctz=Europe/London" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    <iframe class="calendar" src="https://calendar.google.com/calendar/embed?src=cuac.athletics%40gmail.com&ctz=Europe/London" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 <div class="section-full bkg-light-teal">
     <h2>Upcoming Events</h2>
-    <h5>Freshers Meet & Greet</h5>
-    <p><strong>When?</strong></p>
-    <p>sdfsdf</p>
-    <p><strong>Where?</strong></p>
-    <p>sdfsdf</p>
-    <p><strong>The details</strong></p>
-    <p>sdfsfdsdf</p>
+    {% for event in entry.events %}
+    <div class="calendar__event">
+        <h5>{{ event.eventTitle }}</h5>
+        <p><strong>When?</strong></p>
+        <p class="calendar__event-field">{{ event.dateTime }}</p>
+        <p><strong>Where?</strong></p>
+        <p class="calendar__event-field">{{ event.location }}</p>
+        <p><strong>The details</strong></p>
+        <p class="calendar__event-field">{{ event.description }}</p>
+        {% if event.facebookEvent is defined and event.facebookEvent != "" %}
+        	<a class="calednar__event-field" href="{{ event.facebookEvent }}" target="_tab">Go to facebook event</a>
+        {% endif %}
+        <hr class="calendar__event-hr">
+
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

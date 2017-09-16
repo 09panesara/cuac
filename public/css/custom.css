@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import url("https://fonts.googleapis.com/css?family=Courgette|=Mukta+Mahee|Dosis:400,800|Hind:700|Josefin+Sans:400i|Josefin+Slab:400i|Merriweather:400i|Passion+One|Source+Sans+Pro:400,700|Ubuntu");
 @import url("https://fonts.googleapis.com/css?family=Mukta+Mahee|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono|Vollkorn");
 @import url(../foundation-icons/foundation-icons.css);
 @import url(../foundation-icons/foundation-icons.css);
 @import url(../foundation-icons/foundation-icons.css);
@@ -7369,6 +7370,35 @@ p.prospective-s__qn__title {
   font-family: 'Josefin Sans', sans-serif;
   color: #A7FFEB; }
 
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  .calendar {
+    width: 500px;
+    height: 400px; } }
+
+@media only screen and (max-width: 40em) {
+  .calendar {
+    width: 95%;
+    height: 375px; } }
+
+.calendar__event {
+  margin-bottom: 50px;
+  max-width: 500px;
+  margin: auto; }
+  .calendar__event-field {
+    font-family: 'Dosis', sans-serif; }
+  .calendar__event a {
+    color: #7e57c2;
+    text-transform: uppercase; }
+    .calendar__event a:hover {
+      color: #7e57c2;
+      opacity: .5; }
+  .calendar__event-hr {
+    border-style: dashed;
+    border-color: #131212;
+    border-width: 1px 0 0 0;
+    max-width: 450px;
+    margin: 50px auto 50px auto; }
+
 .info-for-members {
   height: 100%; }
   .info-for-members__left, .info-for-members__right {
@@ -7427,6 +7457,24 @@ p.prospective-s__qn__title {
     transform-origin: center;
     -webkit-transform: rotate(-90deg) translateX(-1em);
     transform: rotate(-90deg) translateX(-1em); }
+
+.image-full-wrap {
+  width: 100%;
+  min-height: 200px; }
+
+.image-full {
+  width: 100%; }
+
+.news__overlay {
+  width: calc(100% - 30px);
+  padding: 15px 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 35%);
+  -ms-transform: translate(-50%, 35%);
+  -o-transform: translate(-50%, 35%);
+  transform: translate(-50%, 35%); }
 
 .btn--highlight {
   color: white;

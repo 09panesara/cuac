@@ -20,6 +20,14 @@ font-family: 'Merriweather', serif used
 
 
 */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Vollkorn');
+// font-family: 'Dosis', sans-serif; - try for blog 
+// font-family: 'Roboto Mono', monospace;
+// font-family: 'Vollkorn', serif;
+
+
+
 @import 'components/header/__header.scss';
 @import 'components/header__push-down/__header__push-down.scss';
 @import 'components/footer/__footer.scss';
@@ -28,10 +36,13 @@ font-family: 'Merriweather', serif used
 @import 'components/section/__section.scss';
 @import 'components/card/__card.scss';
 @import '_join.scss';
+@import '_calendar.scss';
 @import 'components/info-for-members/__info-for-members.scss';
-
+@import '_keeping-up-with-cuac.scss';
 
 @import 'buttons.scss';
+
+
 
 .color-hover {
     cursor: pointer;

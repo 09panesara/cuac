@@ -1,7 +1,9 @@
+@import '_variables.scss';
+
 .btn--highlight {
   color: white;
   border-radius: 32px;
-  background-color: #7e57c2;
+  background-color: $color-purple;
   padding: 20px 20px;
   -webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);

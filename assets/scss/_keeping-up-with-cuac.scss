@@ -1,0 +1,30 @@
+.image-full-wrap {
+	width: 100%;
+	min-height: 200px;
+
+}
+
+.image-full {
+	width: 100%;
+}
+
+.news__overlay {
+	// position: relative;
+	// top: -100px;
+	// min-height: 150px;
+	// margin: auto;
+	// z-index: 2;
+	// width: 85%;
+	// margin-left: 7.5%;
+	// margin-right: 7.5%;
+	width: calc(100% - 30px);
+    padding: 15px 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 35%);
+    -ms-transform: translate(-50%, 35%);
+    -o-transform: translate(-50%, 35%);
+    transform: translate(-50%, 35%);
+   /// height: need to calculate according to size of image, etc.
+}

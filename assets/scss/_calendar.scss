@@ -1,0 +1,40 @@
+.calendar {
+	@media #{$medium-only} {
+		width: 500px;
+		height: 400px;
+	}
+
+	@media #{$small-only} {
+		width: 95%;
+		height: 375px;
+	}
+}
+
+.calendar__event {
+	&-field {
+		font-family: 'Dosis', sans-serif;
+
+	}
+
+	a{
+		color: $color-purple;
+		text-transform: uppercase;
+		&:hover {
+			color: $color-purple;
+			opacity: .5;
+		}
+	}
+
+	margin-bottom: 50px;
+	max-width: 500px;
+	margin: auto;
+
+	&-hr {
+		border-style: dashed;
+	    border-color: #131212;
+	    border-width: 1px 0 0 0;
+	    max-width: 450px;
+	    margin: 50px auto 50px auto;
+	}
+
+}

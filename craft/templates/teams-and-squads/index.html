@@ -1,14 +1,6 @@
-	{#
- # News index template
- # -------------------
- #
- # This template is loaded whenever http://example.com/news is
- # requested, because it is located at news/index.html in your
- # craft/templates/ folder.
- #
- # See this page for more details on how Craft routes requests:
- # http://craftcms.com/docs/routing
- #}
+{% if entry is not defined %}
+    {% set entry = craft.entries.section('teamsAndSquads').first() %}
+{% endif %}
 
 {% extends "_layout.html" %}
 
@@ -34,7 +26,7 @@
     			 
         	{% endfor %}
     		
-	{% endfor %}
+	    {% endfor %}
 	</div>
 
 {% endblock %}
