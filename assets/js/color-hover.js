@@ -1,4 +1,4 @@
-colors = ['#F44336', '#E91E63', '#9C27B0', '#2196F3', '#B388FF', '#00BCD4', '#00BFA5', '#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
+colors = ['#F44336', '#E91E63', '#9C27B0', '#2196F3', '#B388FF', '#00BCD4', '#00BFA5', '#4CAF50', '#8BC34A', '#CDDC39', '#FFC107', '#FF9800', '#FF5722'];
 var color = '#FFFFFF';
 
 $(document).ready(function () {

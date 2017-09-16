@@ -1,0 +1,378 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../css/custom.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../fonts/foundation-icons/foundation-icons.css">
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="/js/vendor/jquery.js"></script>
+
+<script src="https://use.fontawesome.com/aa1bb1eb0f.js"></script>
+
+<script src="../js/vendor/modernizr.js"></script>
+<script src="../js/foundation.js"></script> <!-- change to individual later -->
+
+<script src="../js/foundation/foundation.equalizer.js"></script> <!-- change to individual later -->
+
+<script>
+    $(document).foundation();
+</script>
+<script src="/js/vendor/fastclick.js"></script>
+<script src="../js/color-hover.js"></script>
+<script src="../js/header-overlay.js"></script>
+<script src="../js/filter.js"></script>
+<script src="../js/team-card-overlay.js"></script>
+<script src="../js/social-media-bar.js"></script>
+
+
+</head>
+<body>
+
+    <!--<div class="header">
+	<div class="header__logo">
+		<img src="images/logo-no-lettering.png" alt="cuac-logo" class="header__logo-img">
+		<p class="header__title">Cambridge University Athletics Club</p>
+	</div>
+	<div class="header__menu">
+		<a href="">Teams & Squads</a>
+		<a href="">Info for Members</a>
+		<a href="">Calendar</a>
+		<a href="">Join</a>
+		<a href="">Keeping Up with CUAC</a>
+		<a href="">Alumni</a>
+		<a href="">Sponsorship</a>
+
+
+	</div>
+
+
+</div>-->
+<a class="header__logo" href="http://localhost:3000/index.html"></a>
+<div class="nav-overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="nav-overlay__content">
+        <a href="http://localhost:3000" class="color-hover menu-link">Home</a>
+        <a href="http://localhost:3000/teams-and-squads/" class="color-hover menu-link">Teams & Squads</a>
+        <a href="http://localhost:3000/info-for-members/" class="color-hover menu-link">Info for Members</a>
+        <a href="http://localhost:3000/join.html" class="color-hover menu-link">Join</a>
+        <a href="http://localhost:3000/alumni.html" class="color-hover menu-link">Alumni</a>
+        <a href="http://localhost:3000/keeping-up-with-cuac.html" class="color-hover menu-link">Keeping up with CUAC</a>
+        <a href="http://localhost:3000/calendar.html" class="color-hover menu-link">Calendar</a>
+        <a href="http://localhost:3000/history.html" class="color-hover menu-link">History</a>
+        <a href="http://localhost:3000/sponsorship.html" class="color-hover menu-link">Sponsorship</a>
+    </div>
+
+</div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<div class="menu-btn" id="menu-btn" onclick="openNav()">&#9776</div>
+
+
+    <div class="section-full">
+        <div class="row">
+            <h1 class="section-full-heading">Our team</h1>
+            <p class="font-dosis-heavy">CUAC is special, and that means our team is special too.<br />Go on and scroll down (or filter) to find out more about them.</p>
+            <div class="section-full__links">
+                <p onclick="filterAll()">All</p>
+                <p onclick="filterCommittee()">Committee</p>
+                <p onclick="filterSquadL()" >Squad Leaders</p>
+                <p onclick="filterCoaches()">Coaches</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="team-members bkg-off-white">
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Daisy Irving-Hyman</p>
+            <p class="team-card__role">President</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>A srsrser</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>dei23</p>
+            </div>
+        </div>
+    </div>
+</div>    
+        <div class="team-card squadL committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Amrita Panesar</p>
+            <p class="team-card__role">Honorary Secretary/Sprints Squad leader</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">James Coxon</p>
+            <p class="team-card__role">Mens' Captain</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Hephzibah 'Hepsi' Adeosun</p>
+            <p class="team-card__role">Womens' Captain</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Tom Goulding</p>
+            <p class="team-card__role">Alverstones' Captain</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee squadL" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Lea Holville</p>
+            <p class="team-card__role">Alligators' Captain (joint)</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/tiwa-abroad.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Tiwa Adebayo</p>
+            <p class="team-card__role">Alligators' Captain (joint)</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/steph.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Stephanie Sinclair</p>
+            <p class="team-card__role">Alumni & Sponsorship Secretary</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Lawrence Hopkins</p>
+            <p class="team-card__role">Publicity Secretary</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Caroline Johnson</p>
+            <p class="team-card__role">Junior Treasurer</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Emmaline Okafor</p>
+            <p class="team-card__role">Kit Secretary</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+        <div class="team-card committee" onmouseenter="colorBkgHover(this, event)" onmouseleave="colorBkgRemove(this, event)" data-equalizer onclick="toggleOverlay(this)">
+    <div class="team-card__content">
+        <div class="team-card__img-w" >
+            <img class="team-card__img" src=../images/lea-holiday.jpg></>
+        </div>
+        <div class="team-card__intro color-bkg-hover" id="team-card__intro" data-equalizer-watch>
+            <p class="team-card__name">Ellie Lane</p>
+            <p class="team-card__role">Officials' Secretary</p>
+        </div>
+        <div class="team-card__overlay">
+            <div class="team-card__overlay__content">
+                <p>@@member-info</p>
+                <p class="team-card__overlay__title">Important Fact</p>
+                <p class="team-card__overlay__fact">@@member-fact</p>
+                <p class="team-card__overlay__title">Way to contact</p>
+                <p>@@member-contact</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+
+    <div class="row">
+<footer class="footer">
+	<div class="footer__fact">
+		<p class="footer__fact__title">Fact (v. true):</p>
+		<p class="footer__fact__info">cuac is the oldest athletics club in the world</p>
+	</div>
+
+
+
+		<div class="footer__links">
+			<a href="" class="color-hover">Home</a>
+            <a href="" class="color-hover">Join</a>
+			<!--<a href="" class="color-hover">Teams & Squads</a>-->
+			<a href="" class="color-hover">Info for Members</a>
+			<a href="" class="color-hover">Calendar</a>
+            <!--<a href="" class="color-hover">Alumni</a>-->
+            <a href="" class="color-hover">Sponsorship</a>
+            <br />
+			
+			<!--
+			<a href="" class="color-hover">Alumni</a>
+			<a href="" class="color-hover">Sponsorship</a>
+            <a href="" class="color-hover">Keeping up with CUAC</a>-->
+
+		</div>
+		
+		<div class="footer__info">
+			<div class="footer__cuac-info">
+				<i class="fi-mail"></i>
+				<a class="hover-cuac">cuac.athletics@gmail.com</a>
+			</div>
+			<div class="footer__cuac-info">
+                <span><i class="fi-mail"></i></span>
+				<a class="hover-cuac">The Pavillion, Wilberforce Road</a>
+			</div>
+		</div>
+
+        <div class="footer__social-links">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+		
+
+</footer>
+</div>
+
+</body>
+</html>

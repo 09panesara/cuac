@@ -1,0 +1,72 @@
+{# {% include '_basic-layout.html' %}  #}
+<html>
+<head>
+    <link rel="stylesheet" href="/css/custom.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="../fonts/foundation-icons/foundation-icons.css">
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script src="/js/vendor/jquery.js"></script>
+
+<script src="https://use.fontawesome.com/aa1bb1eb0f.js"></script>
+
+<script src="../js/vendor/modernizr.js"></script>
+<script src="../js/foundation.js"></script> <!-- change to individual later -->
+
+<script src="../js/foundation/foundation.equalizer.js"></script> <!-- change to individual later -->
+
+<script>
+    $(document).foundation();
+</script>
+<script src="/js/vendor/fastclick.js"></script>
+<script src="../js/color-hover.js"></script>
+<script src="../js/header-overlay.js"></script>
+<script src="../js/filter.js"></script>
+<script src="../js/team-card-overlay.js"></script>
+<script src="../js/social-media-bar.js"></script>
+
+
+</head>
+<body>
+
+<a class="header__logo" href="http://localhost:3000/index.html"></a>
+<div class="nav-overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="nav-overlay__content">
+        <a href="http://localhost:3000" class="color-hover menu-link">Home</a>
+        <a href="http://localhost:3000/teams-and-squads/" class="color-hover menu-link">Teams & Squads</a>
+        <a href="http://localhost:3000/info-for-members/" class="color-hover menu-link">Info for Members</a>
+        <a href="http://localhost:3000/join.html" class="color-hover menu-link">Join</a>
+        <a href="http://localhost:3000/alumni.html" class="color-hover menu-link">Alumni</a>
+        <a href="http://localhost:3000/keeping-up-with-cuac.html" class="color-hover menu-link">Keeping up with CUAC</a>
+        <a href="http://localhost:3000/calendar.html" class="color-hover menu-link">Calendar</a>
+        <a href="http://localhost:3000/history.html" class="color-hover menu-link">History</a>
+        <a href="http://localhost:3000/sponsorship.html" class="color-hover menu-link">Sponsorship</a>
+    </div>
+
+</div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+
+
+{{ entry.getType() }}
+{% for block in entry.teamMembers %}
+    {% set fields = block.getFieldLayout().getFields() %}
+    {% for field in fields %}
+        {% set type = field.getField().name %}
+        {{ type }}
+
+    {% endfor %}
+    {{ block.getFieldLayout().getFields[0]}}
+{% endfor %}
+{# loop through the fields in the entries fieldLayout Model #}
+
+</section>
+
+</body>
+</html>

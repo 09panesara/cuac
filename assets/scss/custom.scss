@@ -28,10 +28,12 @@ font-family: 'Merriweather', serif used
 @import 'components/section/__section.scss';
 @import 'components/card/__card.scss';
 @import '_join.scss';
+@import 'components/info-for-members/__info-for-members.scss';
 
 
+@import 'buttons.scss';
 
-.color-hover{
+.color-hover {
     cursor: pointer;
 }
 
@@ -40,7 +42,7 @@ a {
 
 }
 
-.a-cuac{
+.a-cuac {
     color: $color-cuac;
 }
 
@@ -58,9 +60,9 @@ a:hover {
     color: $color-grey;
 }
 
-.hover-cuac{
+.hover-cuac {
     color: $color-white;
-    &:hover{
+    &:hover {
         color: $color-cuac;
         cursor: pointer;
     }
@@ -100,7 +102,7 @@ h1, h2, h3, h4, h5 {
     display: block;
 }
 
-:before, :after{
+:before, :after {
     box-sizing: border-box;
     outline: 0;
 }
@@ -114,20 +116,34 @@ h1, h2, h3, h4, h5 {
     margin-left: 70%;
     margin-bottom: 100%;
 }
-.side-nav li a{
+
+.side-nav li a {
     color: $color-cuac;
 }
-.side-nav a:hover{
+
+.side-nav a:hover {
     opacity: 1;
     transform: scale(1);
 }
 
-.side-nav__a{
+.side-nav__a {
     color: $color-white;
 }
 
-.hide-for-small-only{
-    @media #{$small-only}{
+.hide-for-small-only {
+    @media #{$small-only} {
         display: none;
     }
+}
+
+.--text-center {
+    text-align: center;
+}
+
+.-mt20 {
+    margin-top: 20px;
+}
+
+.-mt40 {
+    margin-top: 40px;
 }

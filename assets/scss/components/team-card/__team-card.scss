@@ -121,9 +121,10 @@
     /* Position the content inside the nav-overlay */
     .team-card__overlay__content {
         position: relative;
-        top: rem-calc(40px);
+        top: 0;
         width: 100%;
         text-align: center;
-        margin-top: rem-calc(30px);
+        padding: 20px 20px;
+        height: 100%;
     }
 }

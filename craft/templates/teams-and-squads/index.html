@@ -1,0 +1,41 @@
+	{#
+ # News index template
+ # -------------------
+ #
+ # This template is loaded whenever http://example.com/news is
+ # requested, because it is located at news/index.html in your
+ # craft/templates/ folder.
+ #
+ # See this page for more details on how Craft routes requests:
+ # http://craftcms.com/docs/routing
+ #}
+
+{% extends "_layout.html" %}
+
+{% block content %}
+	
+	<div class="section-full">		
+        <div class="row">
+            <h1 class="section-full-heading">Our team</h1>
+            <p class="font-dosis-heavy">CUAC is special, and that means our team is special too.<br />Go on and scroll down (or filter) to find out more about them.</p>
+            <div class="section-full__links">
+                <p onclick="filterAll()">All</p>
+                <p onclick="filterCommittee()">Committee</p>
+                <p onclick="filterSquadL()" >Squad Leaders</p>
+                <p onclick="filterCoaches()">Coaches</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="team-members bkg-off-white">
+    	{% for entry in craft.entries.section('teamsAndSquads').find() %}
+    		{% for teamMember in entry.teamMembers %}    	
+    			{% include 'components/team-card/_team-card.html' with {name: teamMember.memberName, positions: teamMember.position, roles: teamMember.role, bio: teamMember.bio, image: teamMember.image.first(), fact: teamMember.fact, email: teamMember.email  } %}
+    			 
+        	{% endfor %}
+    		
+	{% endfor %}
+	</div>
+
+{% endblock %}
+

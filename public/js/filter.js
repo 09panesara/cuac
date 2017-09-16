@@ -6,7 +6,7 @@
 
     function unfilterCoaches() {
         if (coachesFiltered) {
-            $('.coaches').css('display', 'none');
+            $('.coach').css('display', 'none');
             coachesFiltered = false;
         }
         return;
@@ -14,7 +14,7 @@
 
     function unfilterCommittee() {
         if (committeeFiltered) {
-            $('.committee').css('display', 'none');
+            $('.committeeMember').css('display', 'none');
             committeeFiltered = false;
         }
         return;
@@ -22,7 +22,7 @@
 
     function unfilterSquadL() {
         if (squadLFiltered) {
-            $('.squadL').css('display', 'none');
+            $('.squadLeader').css('display', 'none');
             squadLFiltered = false;
         }
         return;
@@ -30,18 +30,18 @@
 
     function filterCoachesHelper() {
         if (!coachesFiltered) {
-            $('.coaches').css('display', 'inline-block');
+            $('.coach').css('display', 'inline-block');
             coachesFiltered = true;
         }
     }
 
     function filterCommitteeHelper() {
-        $('.committee').css('display', 'inline-block');
+        $('.committeeMember').css('display', 'inline-block');
         committeeFiltered = true;           
     }
 
     function filterSquadLHelper() {
-        $('.squadL').css('display', 'inline-block');
+        $('.squadLeader').css('display', 'inline-block');
         squadLFiltered = true;    
     }
     function filterAll() {

@@ -1,0 +1,17 @@
+{% for block in entry.layoutBlocks %}
+    {% switch block.type %}
+
+        {% case "header" %}
+            {% include 'components/header.html' %}
+
+        {#{% case "textBlock" %}
+                {% include 'components/layout-blocks/text.html' with {block: block, loopIndex: loop.index, replaceStr: (replaceStr is defined ? replaceStr : false) } %} #}
+
+        {% case "teamCard" %}
+        	{% include 'components/teamCard.html' with {block: block, teamCard: teamCard} %}
+
+        {% case "footer" %}
+            {% include 'components/footer' with {block: block, footerFact : (footerFact is defined ? footerFact : "Founded in 1857, CUAC is the oldest athletics club in the world")} %}
+            
+    {% endswitch %}
+{% endfor %}
