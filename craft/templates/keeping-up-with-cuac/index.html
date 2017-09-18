@@ -18,23 +18,67 @@
 
 {# inspiration: https://www.hellozurich.ch/en #}
 
+
 {% block content %}
+<script type="text/javascript">
+  instafetch.init({
+    accessToken: '2988813421.1677ed0.12cd811992be440f979615d988f467eb',
+    target: 'instafetch',
+    numOfPics: 12,
+    caption: false
+  });
+</script>
+
+  <script>
+    $(function(){
+      $("#slides").slidesjs({
+        width: 940,
+        height: 528,
+        pagination: {
+	      active: true,
+	        // [boolean] Create pagination items.
+	        // You cannot use your own pagination. Sorry.
+	      effect: "fade"
+	        // [string] Can be either "slide" or "fade".
+	    },
+        effect: {
+	      fade: {
+	        speed: 3000,
+	          // [number] Speed in milliseconds of the fade animation.
+	        crossfade: true
+	          // [boolean] Cross-fade the transition.
+	      }
+	    }
+      });
+    });
+  </script>
+  {# need to remove into separate files/components!! #}
+ {# need to do image transforms: https://craftcms.com/docs/image-transforms #}
 	<div class="section-full bkg-white" style="padding: 45px 0px;">
 	    <div class="row">
-	        <h1 class="section-full-heading">Keeping up with CUAC</h1>
+	        <h1 class="section-full-heading -mb0">Keeping up with CUAC</h1>
 	        <p class="font-dosis-heavy">All the latest news and adventures here at Cambridge University Athletics Club.</p>
 	    </div>
+
+	    <div id="slides">
+		    <img src="https://www.cesarsway.com/sites/newcesarsway/files/styles/360px_x_190px/public/Have-you-heard--The-key-to-calmer-happier-dogs.jpg?itok=4STe_kmA">
+		    <img src="http://placehold.it/940x528">
+		    <img src="https://www.cesarsway.com/sites/newcesarsway/files/styles/360px_x_190px/public/Have-you-heard--The-key-to-calmer-happier-dogs.jpg?itok=4STe_kmA">
+		    <img src="http://placehold.it/940x528">
+		    <img src="http://placehold.it/940x528">
+		  </div>
 	</div>
-	<div class="image-full-wrap">
+	<!-- <div class="image-full-wrap">
 		<img class="image-full" src="{{ entry.image.first().url }}">
 	</div>
 
 	<div class="news__overlay bkg-white">
 		<p>Discover unique places and locals’ favourite spots. We bring you the stories behind the sights. This is no ordinary city guide.</p>
 		<p>This is a test version with just a few posts.</p>
-	</div>
+	</div> -->
 
-	<div class="section-full bkg-off-white">
+	<div class="section-full bkg-off-white -pt0">
+		<h4 class="subtitle">Highlights</h4>
 		{% for entry in craft.entries.section('blog').find() %}
 			<article>
 				<h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
@@ -44,4 +88,12 @@
 			</article>
 		{% endfor %}
 	</div>
+
+	<div class="instagram-feed">
+		<h4 class="subtitle">CUAC on Instagram</h4>
+		<div id="instafetch"></div>
+
+	</div>
+
+
 {% endblock %}

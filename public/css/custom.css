@@ -7459,8 +7459,26 @@ p.prospective-s__qn__title {
     transform: rotate(-90deg) translateX(-1em); }
 
 .image-full-wrap {
-  width: 100%;
-  min-height: 200px; }
+  width: 100%; }
+
+.image-full-wrap {
+  height: 60vh;
+  position: relative;
+  margin-bottom: 150px; }
+  @media only screen and (max-width: 40em) {
+    .image-full-wrap {
+      height: calc(80vh - 84px);
+      margin-bottom: 100px; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .image-full-wrap {
+      margin-bottom: 175px; } }
+  @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+    .image-full-wrap {
+      margin-bottom: 175px; } }
+  @media only screen and (min-width: 64.0625em) and (max-width: 90em) {
+    .image-full-wrap {
+      height: calc(80vh - 120px);
+      margin-bottom: 200px; } }
 
 .image-full {
   width: 100%; }
@@ -7475,6 +7493,55 @@ p.prospective-s__qn__title {
   -ms-transform: translate(-50%, 35%);
   -o-transform: translate(-50%, 35%);
   transform: translate(-50%, 35%); }
+
+@media only screen and (min-width: 64.0625em) and (max-width: 90em) {
+  .instagram-feed {
+    padding-left: 100px;
+    padding-right: 100px; } }
+
+@media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+  .instagram-feed {
+    padding-left: 80px;
+    padding-right: 80px; } }
+
+@media only screen and (max-width: 40em) {
+  .instagram-feed {
+    padding-left: 5%;
+    padding-right: 5%; } }
+
+#instafetch {
+  min-height: 500px;
+  margin-bottom: 60px; }
+  #instafetch article {
+    display: inline-block; }
+    @media only screen and (min-width: 64.0625em) and (max-width: 90em) {
+      #instafetch article {
+        width: 33.33%; } }
+    @media only screen and (min-width: 40.0625em) and (max-width: 64em) {
+      #instafetch article {
+        width: 50%; } }
+    @media only screen and (max-width: 40em) {
+      #instafetch article {
+        width: 100%; } }
+    #instafetch article figure {
+      box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s;
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      transform: scale(1);
+      width: 90%;
+      height: 90%; }
+      #instafetch article figure:hover {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -webkit-transform: scale(0.98);
+        -ms-transform: scale(0.98);
+        -o-transform: scale(0.98);
+        transform: scale(0.98); }
 
 .btn--highlight {
   color: white;
@@ -7577,3 +7644,18 @@ h1, h2, h3, h4, h5 {
 
 .-mt40 {
   margin-top: 40px; }
+
+.-mb0 {
+  margin-bottom: 0px; }
+
+.-mt0 {
+  margin-top: 0; }
+
+.-pt0 {
+  padding-top: 0; }
+
+.subtitle {
+  color: grey;
+  padding-top: 50px;
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold; }

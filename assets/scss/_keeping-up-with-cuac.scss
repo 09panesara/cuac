@@ -1,8 +1,39 @@
 .image-full-wrap {
 	width: 100%;
-	min-height: 200px;
+	// min-height: 200px;
 
 }
+.image-full-wrap {
+	height: 60vh;
+	position: relative;
+	margin-bottom: 150px;
+
+	@media #{$small-only} {
+		height: calc(80vh - 84px);
+		margin-bottom: 100px;
+	}
+
+    @media #{$medium-only} {
+   		margin-bottom: 175px;
+  	}
+
+    @media #{$medium-only} {
+    	margin-bottom: 175px;
+ 	}
+
+ 	 @media #{$large-only} {
+ 	 	height: calc(80vh - 120px);
+    	margin-bottom:200px;
+ 	}
+
+
+  //  @media #{$large-only} { 
+  //   height: rem-calc(80vh - 134px);
+  //   margin-bottom: 200px;
+  // }
+
+}
+
 
 .image-full {
 	width: 100%;
@@ -28,3 +59,70 @@
     transform: translate(-50%, 35%);
    /// height: need to calculate according to size of image, etc.
 }
+
+.instagram-feed {
+
+
+	@media #{$large-only} {
+		padding-left: 100px;
+		padding-right: 100px;
+	}
+
+	@media #{$medium-only} {
+		padding-left: 80px;
+		padding-right: 80px;
+	}
+
+	@media #{$small-only} {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+#instafetch {
+	min-height: 500px;
+	margin-bottom: 60px;
+	& article {
+		@media #{$large-only} {
+			width: 33.33%;
+		}
+
+		@media #{$medium-only} {
+			width: 50%;
+		}
+
+		@media #{$small-only} {
+			width: 100%;
+		}
+
+	    display: inline-block;
+
+	    &:nth-child(3n+2) {
+	    	// margin-top: 100px;
+	    }
+
+	    & figure {
+		    box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+		    -webkit-box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
+		    -webkit-transition: all 0.3s;
+		    -o-transition: all 0.3s;
+		    transition: all 0.3s;
+		    -webkit-transform: scale(1);
+		    -ms-transform: scale(1);
+		    -o-transform: scale(1);
+		    transform: scale(1);
+		    width: 90%;
+		    height: 90%;
+
+		    &:hover {
+		    	box-shadow: none;
+		    	-webkit-box-shadow: none;
+			    -webkit-transform: scale(0.98);
+			    -ms-transform: scale(0.98);
+			    -o-transform: scale(0.98);
+			    transform: scale(0.98);
+		    }
+		}
+	}
+}
+
