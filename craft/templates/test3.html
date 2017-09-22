@@ -10,18 +10,22 @@
 
 </body>
 <script>
-    
+
 </script>
 <script>
-    var request = new Request('https://api.instagram.com/v1/users/self/media/recent?access_token=2252523010.3b3a18c.17d29cd12e77458d9f9c9a133d1bea1a', {
-        method: 'POST',
+// https://api.instagram.com/v1/users/self/media/recent?access_token=2252523010.3b3a18c.17d29cd12e77458d9f9c9a133d1bea1
+    // var proxyUrl = 'cors-anywhere.herokuapp.com/';
+    // proxyUrl = '';
+    // var targetUrl = 'https://api.instagram.com/v1/users/self/media/recent?access_token=2988813421.1677ed0.12cd811992be440f979615d988f467eb';
+    var request = new Request('https://api.instagram.com/v1/users/self/media/recent?access_token=2988813421.1677ed0.12cd811992be440f979615d988f467eb', {
+        method: 'GET',
         mode: 'cors',
         redirect: 'follow',
         headers: new Headers({
             'Content-Type': 'text/plain',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-            'Access-Control-Allow-Credentials': true
+            // 'Access-Control-Allow-Origin': 'http://localhost:81 | http://localhost:81/test3.html | localhost:81/*| *',
+            // 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+            
         })
     });
 

@@ -1,0 +1,22 @@
+
+<html>
+<head>
+	<title>Cross-domain request using JSONP</title>
+</head>
+<body>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+console.log(2);
+	fetchJsonp('http://catfacts-api.appspot.com/api/facts?number=99.jsonp')
+  .then(function(response) {
+    return response.json()
+  }).then(function(json) {
+    console.log('parsed json', json)
+  }).catch(function(ex) {
+    console.log('parsing failed', ex)
+  })
+</script>
+
+</body>
+</html>
+

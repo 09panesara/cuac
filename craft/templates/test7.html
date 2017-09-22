@@ -1,0 +1,29 @@
+
+<html>
+<head>
+	<title>Cross-domain request using JSONP</title>
+</head>
+<body>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	// fetchJsonp('http://catfacts-api.appspot.com/api/facts?number=99.jsonp')
+
+  $.ajax({
+      url: 'https://api.instagram.com/v1/users/self/media/recent/?access_token=2988813421.1677ed0.12cd811992be440f979615d988f467eb&callback=?',
+
+      error: function() {
+        alert('error');
+      },
+
+      success: function(data) {
+      	console.log(data);
+       alert('yes');
+      },
+      type: 'GET',
+      dataType: "jsonp"
+   });
+</script>
+
+</body>
+</html>
+

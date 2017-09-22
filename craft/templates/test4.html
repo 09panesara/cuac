@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="/js/vendor/jquery.js"></script>
+  <script>
+  // var proxyUrl = 'cors-anywhere.herokuapp.com/';
+  // var targetUrl = 'http://catfacts-api.appspot.com/api/facts?number=99';
+  // fetch('https://api.instagram.com/v1/users/self/media/recent?access_token=2988813421.1677ed0.12cd811992be440f979615d988f467eb')
+  //   .then(blob => blob.json())
+  //   .then(data => {
+  //     console.table(data);
+  //     document.querySelector("pre").innerHTML = JSON.stringify(data, null, 2);
+  //     return data;
+  //   })
+  //   .catch(e => {
+  //     console.log(e);
+  //     return e;
+  //   });
+
+  var url = 'http://catfacts-api.appspot.com/api/facts?number=99';
+    $.get(url)
+      .done(function(data){
+        $('body').text(data.response);
+      }).fail(function(){
+        $('body').text('Request to '+url+' failed!');
+      });
+</script>
+</head>
+  <pre></pre>
+</html>

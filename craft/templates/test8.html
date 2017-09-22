@@ -1,0 +1,352 @@
+<html>
+<head>
+<script>
+'use strict';
+(function (global, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['exports', 'module'], factory);
+  } else if (typeof exports !== 'undefined' && typeof module !== 'undefined') {
+    factory(exports, module);
+  } else {
+    var mod = {
+      exports: {}
+    };
+    factory(mod.exports, mod);
+    global.fetchJsonp = mod.exports;
+  }
+})(this, function (exports, module) {
+  'use strict';
+
+  var defaultOptions = {
+    timeout: 5000,
+    jsonpCallback: 'callback',
+    jsonpCallbackFunction: null
+  };
+
+  function generateCallbackFunction() {
+    return 'jsonp_' + Date.now() + '_' + Math.ceil(Math.random() * 100000);
+  }
+
+  function clearFunction(functionName) {
+    // IE8 throws an exception when you try to delete a property on window
+    // http://stackoverflow.com/a/1824228/751089
+    try {
+      delete window[functionName];
+    } catch (e) {
+      window[functionName] = undefined;
+    }
+  }
+
+  function removeScript(scriptId) {
+    var script = document.getElementById(scriptId);
+    if (script) {
+      document.getElementsByTagName('head')[0].removeChild(script);
+    }
+  }
+
+  function fetchJsonp(_url) {
+    var options = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+
+    // to avoid param reassign
+    var url = _url;
+    var timeout = options.timeout || defaultOptions.timeout;
+    var jsonpCallback = options.jsonpCallback || defaultOptions.jsonpCallback;
+
+    var timeoutId = undefined;
+
+    return new Promise(function (resolve, reject) {
+      var callbackFunction = options.jsonpCallbackFunction || generateCallbackFunction();
+      var scriptId = jsonpCallback + '_' + callbackFunction;
+
+      window[callbackFunction] = function (response) {
+        resolve({
+          ok: true,
+          // keep consistent with fetch API
+          json: function json() {
+            return Promise.resolve(response);
+          }
+        });
+
+        if (timeoutId) clearTimeout(timeoutId);
+
+        removeScript(scriptId);
+
+        clearFunction(callbackFunction);
+      };
+
+      // Check if the user set their own params, and if not add a ? to start a list of params
+      url += url.indexOf('?') === -1 ? '?' : '&';
+
+      var jsonpScript = document.createElement('script');
+      jsonpScript.setAttribute('src', '' + url + jsonpCallback + '=' + callbackFunction);
+      if (options.charset) {
+        jsonpScript.setAttribute('charset', options.charset);
+      }
+      jsonpScript.id = scriptId;
+      document.getElementsByTagName('head')[0].appendChild(jsonpScript);
+
+      timeoutId = setTimeout(function () {
+        reject(new Error('JSONP request to ' + _url + ' timed out'));
+
+        clearFunction(callbackFunction);
+        removeScript(scriptId);
+        window[callbackFunction] = function () {
+          clearFunction(callbackFunction);
+        };
+      }, timeout);
+
+      // Caught if got 404/500
+      jsonpScript.onerror = function () {
+        reject(new Error('JSONP request to ' + _url + ' failed'));
+
+        clearFunction(callbackFunction);
+        removeScript(scriptId);
+        if (timeoutId) clearTimeout(timeoutId);
+      };
+    });
+  }
+
+  // export as global function
+  /*
+  let local;
+  if (typeof global !== 'undefined') {
+    local = global;
+  } else if (typeof self !== 'undefined') {
+    local = self;
+  } else {
+    try {
+      local = Function('return this')();
+    } catch (e) {
+      throw new Error('polyfill failed because global object is unavailable in this environment');
+    }
+  }
+  local.fetchJsonp = fetchJsonp;
+  */
+
+  module.exports = fetchJsonp;
+});
+
+
+
+// END OF fetch-jsonp
+
+
+
+//var Promise = require('promise-polyfill');
+//var fetchJsonp = require('fetch-jsonp');
+
+//
+// Variables
+//
+
+var instafetch = {};
+var supports = !!document.querySelector && !!document.addEventListener;
+var settings, checked, url, targetEl, article, a, figure, img, div, p;
+var baseUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=';
+
+// Default settings
+var defaults = {
+  accessToken: '2988813421.1677ed0.12cd811992be440f979615d988f467eb',
+  target: 'instafetch',
+  numOfPics: 20,
+  caption: false
+};
+
+//
+// Methods
+//
+
+/**
+ * A simple forEach() implementation for Arrays, Objects and NodeLists
+ * @private
+ * @param {Array|Object|NodeList} collection Collection of items to iterate
+ * @param {Function} callback Callback function for each iteration
+ * @param {Array|Object|NodeList} scope Object/NodeList/Array that forEach is iterating over (aka `this`)
+ */
+var forEach = function(collection, callback, scope) {
+  if (Object.prototype.toString.call(collection) === '[object Object]') {
+    for (var prop in collection) {
+      if (Object.prototype.hasOwnProperty.call(collection, prop)) {
+        callback.call(scope, collection[prop], prop, collection);
+      }
+    }
+  } else {
+    for (var i = 0, len = collection.length; i < len; i++) {
+      callback.call(scope, collection[i], i, collection);
+    }
+  }
+};
+
+/**
+ * Merge defaults with user options
+ * @private
+ * @param {Object} defaults Default settings
+ * @param {Object} options User options
+ * @returns {Object} Merged values of defaults and options
+ */
+var extend = function(defaults, options) {
+  var extended = {};
+  forEach(defaults, function(value, prop) {
+    extended[prop] = defaults[prop];
+  });
+  forEach(options, function(value, prop) {
+    extended[prop] = options[prop];
+  });
+  return extended;
+};
+
+/**
+ * Check typeof of settings
+ * @private
+ * @param {Object} options Merged values of defaults and options
+ * @returns {Boolean} Return false if incorrect
+ */
+var checkSettings = function(options) {
+  if (typeof options.accessToken !== 'string') {
+    console.log('accessToken must be a string.');
+    return false;
+  }
+  if (typeof options.target !== 'string') {
+    console.log('target must be a string.');
+    return false;
+  }
+  if (typeof options.numOfPics !== 'number') {
+    console.log('numOfPics must be a number.');
+    return false;
+  }
+  if (typeof options.caption !== 'boolean') {
+    console.log('caption must be a boolean.');
+    return false;
+  }
+
+  return true;
+};
+
+/**
+ * Fetch Instagram API with settings
+ * @private
+ * @param {Object} options Merged values of defaults and options
+ * @returns {Object} JSON data
+ */
+var fetchFeed = function(options) {
+  url = baseUrl + options.accessToken + '&count=' + options.numOfPics + '&callback=?';
+
+  if (!window.Promise) {
+    window.Promise = Promise;
+  }
+
+  fetchJsonp(url).then(function(response) {
+    return response.json();
+  }).then(function(json) {
+    if (json.meta.code === 200) {
+      displayFeed(json, options);
+    } else {
+      console.log(json.meta.error_message);
+    }
+  }).catch(function(error) {
+    console.log(error);
+  });
+};
+
+var displayFeed = function(json, options) {
+  targetEl = document.getElementById(options.target);
+  if (!targetEl) {
+    console.log('No element with id="' + options.target + '" was found on the page.');
+    return;
+  }
+
+  json.data.forEach(function(data) {
+    article = document.createElement('article');
+    a = document.createElement('a');
+    a.href = data.link;
+    a.target = '_blank';
+    figure = document.createElement('figure');
+    img = document.createElement('img');
+    img.src = data.images.standard_resolution.url;
+    figure.appendChild(img);
+    a.appendChild(figure);
+    article.appendChild(a);
+
+    if (options.caption) {
+      div = document.createElement('div');
+      p = document.createElement('p');
+      p.innerHTML = data.caption.text;
+      div.appendChild(p);
+      a.appendChild(div);
+    }
+
+    targetEl.appendChild(article);
+  });
+};
+
+/**
+ * Destroy the current initialization
+ * @public
+ */
+instafetch.destroy = function() {
+  // If plugin isn't already initialized, stop
+  if (!settings) {
+    return;
+  }
+
+  // Reset varaibles
+  settings = null;
+  checked = null;
+  url = null;
+  targetEl = null;
+  article = null;
+  a = null;
+  figure = null;
+  img = null;
+  div = null;
+  p = null;
+};
+
+/**
+ * Initialize Instafetch
+ * @public
+ * @param {Object} options User settings
+ */
+instafetch.init = function(options) {
+  // Feature test
+  if (!supports) {
+    return;
+  }
+
+  // Destroy any existing initializations
+  instafetch.destroy();
+
+  // Variables
+  settings = extend(defaults, options || {});
+
+  // Do something...
+  checked = checkSettings(settings);
+
+  if (checked) {
+    fetchFeed(settings);
+  }
+};
+
+//
+// Public APIs
+//
+
+window.instafetch = instafetch;
+
+
+
+
+
+instafetch.init({
+    accessToken: '2988813421.1677ed0.12cd811992be440f979615d988f467eb',
+    target: 'instafetch',
+    numOfPics: 12,
+    caption: false
+  });
+</script>
+</head>
+
+<body>
+<div id="instafetch"></div>
+</body>
+</html>
